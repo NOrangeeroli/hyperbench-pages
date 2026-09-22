@@ -1,5 +1,5 @@
 {
-  "code_commit": "8aaf46699c25c1d9fbdfc07bdaf5b6e8a56c9bb0",
+  "code_commit": "9eb7cc373f6065c34ae85882e95c9aa8d526d272",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
@@ -52,11 +52,11 @@
     },
     {
       "path": "hyperbench/COST_MODEL.md",
-      "sha256": "56d87afe0882fb8adf3a2bab9cd4c19f7fa12c099edfd6bb6acc06bdee30feb2"
+      "sha256": "0469454c9e533b38747c7428036a518edca7a71d99964cec5a8a6911098381fc"
     },
     {
       "path": "hyperbench/README.md",
-      "sha256": "c33cbbd1fd90ef83a33daa3668f212c190123ff57378d8587ef3b097b93c8eab"
+      "sha256": "b6582e962d768f17e5277641702692b39f38b5cf717a0dae2c64fa136a178228"
     },
     {
       "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",

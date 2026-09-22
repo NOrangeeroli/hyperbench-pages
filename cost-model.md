@@ -232,3 +232,95 @@ python -m hyperbench.cost_report --destination experiments/hyperbolic/YOUR_NEW_I
 coverage、所有 kernel 的序列化 DAG、model_spec、provenance、带大小/SHA256 的 manifest。
 数值公式测试对照真实 solver 的 trace/flux/RK；验证命令重新审计源误差与全部成本，
 核对 source/export 文件哈希。已有记录不足时应拒绝或明确标记，不猜测计数。
+
+## 面向使用者：四个代码模块
+
+三个概念层在 `hyperbench/computation/` 下由四个模块实现：
+
+| 模块 | 职责 | 输入 → 输出 |
+|---|---|---|
+| `cost_graph.py` | 定义统一操作词典、依赖和复用规则 | 标量表达式 → 操作计数、依赖深度、读写槽 |
+| `cost_kernels.py` | 声明重构、通量、残差、RK 的算法配方 | solver 配置 → 每单元/每面计算图 |
+| `cost_model.py` | 根据网格及真实执行次数累计成本，应用资源政策 | 图、N、steps/rejections、快照、profile → W、D、Q、ticks |
+| `cost_report.py` | 将成本与同一轨迹的误差配对、审计与展示 | 冻结结果 → 计数表、覆盖率、DAG、Pareto 与校验文件 |
+
+理论效率不是统一百分制。先固定问题、误差指标和资源假设，再比较达到同一误差的成本。
+误差来自真实 solver 输出与 GT，计算模型不求解 PDE，也不替代 GT。
+
+## 可手算的完整例子：PC + LLF + Euler
+
+网站的[一步算例](https://norangeeroli.github.io/hyperbench-pages/#cost-example)
+逐步展示下列过程。教学配置为 `fv_llf_pc_rk1`，N=4、接受1步、拒绝0次、1张输出快照。
+这只是计算模型算术演示，不是新 PDE 实验；正式 Benchmark 要求 N≥8，analyze 允许 N≥2。
+
+Burgers 通量：
+
+```text
+alpha = max(abs(uL), abs(uR))
+F = (uL*uL + uR*uR)/4 - alpha*(uR-uL)/2
+R_i = (F_left-F_right)/dx
+u_new = u + dt*R
+```
+
+取周期网格 `u=[1,2,1,0]`、dx=0.25、dt=0.01，一整步的数组为：
+
+```text
+五个面 F   = [-0.25, 0.25, 2.25, 0.75, -0.25]
+四个残差 R = [-2, -8, 6, 4]
+更新 u_new = [0.98, 1.92, 1.06, 0.04]
+```
+
+首尾通量相等，更新前后单元值之和都为4，体现周期离散守恒。
+这只用上述公式做算术，不调用 solver 或参考解。
+
+单面取 uL=1、uR=2，得到 alpha=2、F=0.25。单面图有12次操作：
+add=1、sub=2、mul=3、div=2、abs=2、cmp=1、select=1。
+alpha 被通量及速度输出共享，不重复计算；除以常数仍算除法。
+
+| 整步部分 | 工作量 |
+|---|---:|
+| PC 重构（输入别名） | 0 |
+| 5个面通量/速度 ×12 | 60 |
+| 4个空间残差 ×2 | 8 |
+| 4个 Euler 更新 ×2 | 8 |
+| 5速度 max 归约与下限（5次比较+5次选择） | 10 |
+| 4次 finite +3次 AND | 7 |
+| 总工作 W | **93** |
+
+完整操作向量：add=9、sub=14、mul=19、div=14、abs=10、cmp=10、select=10、
+sign=0、finite=4、and=3。算术操作只含加减乘除，共56次，不应把93叫作93 FLOPs。
+
+unit 下屏障深度为 `D=6+2+2+8+3=21`：通量、残差、更新、速度归约与下限、有限值检查。
+单个 kernel 内不同面/单元并行，所以通量深度不乘5。速度项为
+`2*(ceil(log2(5))+1)=8`；检查项为 `1+ceil(log2(4))=3`。
+
+逻辑流量分别为通量160 B、残差96 B、更新96 B、速度归约读取40 B、有限检查读取32 B、
+快照读写64 B，合计488 B。uniform dt/dx 不计内存读取。
+工作区 `8*[3*(N+6)+2*(N+1)]=320 B`；输出32 B。
+因为320 B小于默认32 KiB快存，使用驻留政策，`Q=初态读取32+输出写出32=64 B`。
+这些不是实测 DRAM 流量或真实数组峰值内存。
+
+```text
+unit:      W=93,  D=21, Q=64 → max(93/8, 21, 64/64)  =21 ticks
+division8: W=191, D=35, Q=64 → max(191/8,35, 64/64)  =35 ticks
+```
+
+division8 使14次除法各增加7单位工作，并重新计算最长依赖路径。
+本例由深度项限制，增加 lanes 不一定降低分数；快存设0时 Q=488，488/64=7.625仍不主导。
+对于同样N、接受100步且无拒绝、仍输出1张快照，unit W=9300、D=2100，驻留Q仍是64 B。
+较大的网格/不同方法可能由别的项主导。max 假设资源理想重叠，不是实测秒数保证。
+
+```python
+from hyperbench.computation.cost_model import analyze, virtual_score
+for profile in ("unit", "division8"):
+    cost = analyze("fv_llf_pc_rk1", 4,
+                   [{"steps": 1, "rejected_steps": 0}],
+                   snapshots=1, profile=profile)
+    print(cost["weighted_work"], cost["barrier_span"],
+          cost["policy_bytes"], virtual_score(cost))
+# 93 21 64 21
+# 191 35 64 35
+```
+
+新增 MP5、TENO、RKDG、Yee 等方法尚无已验证映射；历史52个支持项不能解释成当前全部solver。
+文档数字可在仓库根目录运行 `python docs/check_cost_example.py` 复核；不执行PDE或重新测量。
