@@ -1,0 +1,30 @@
+{
+  "code_commit": "fad239e3ec1198ac2f487be2ccaa6a169247b1ee",
+  "scope": "Documentation snapshot; no solver execution",
+  "sources": [
+    {
+      "path": "hyperbench/catalog.py",
+      "sha256": "1b03e768c62d2e64bbcf38a4e4fe06d508601c4c61b7c87c9a428e56acf74d71"
+    },
+    {
+      "path": "hyperbench/v2_catalog.py",
+      "sha256": "9c3c4b732e6e8a4ff389a78caafef03ad6941761e1ee7eeb86535fa740d10534"
+    },
+    {
+      "path": "hyperbench/burgers_stress.py",
+      "sha256": "b7022e38c3e0d9323e90059cde35b2b3eccddef62c77d6f71e990721685d7eaf"
+    },
+    {
+      "path": "hyperbench/COST_MODEL.md",
+      "sha256": "56d87afe0882fb8adf3a2bab9cd4c19f7fa12c099edfd6bb6acc06bdee30feb2"
+    },
+    {
+      "path": "hyperbench/README.md",
+      "sha256": "2288da7857c817807dfc5c4e7194f9d9dc4e9eb5b6702f86f563f3c3a6b5dda9"
+    },
+    {
+      "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",
+      "sha256": "41f6f93475b2b8857c7504eea838c66c2fe0b825701527e6fb439949904f89d9"
+    }
+  ]
+}
