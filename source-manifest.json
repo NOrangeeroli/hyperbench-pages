@@ -1,5 +1,5 @@
 {
-  "code_commit": "a57e54fd5ec6a06b52f58be2c4a862cfd113b0b6",
+  "code_commit": "8aaf46699c25c1d9fbdfc07bdaf5b6e8a56c9bb0",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
@@ -452,7 +452,7 @@
     },
     {
       "path": "hyperbench/equations/README.md",
-      "sha256": "a9af3669e4889f91ae07097dd705b316b0703fb690c3e44ede9c068c11571b08"
+      "sha256": "73d6def5b438f9f1739135d8b4c1482a5f23bc72f9a07a187d36dc31ef045b34"
     }
   ]
 }
