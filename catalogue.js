@@ -3617,7 +3617,7 @@ window.HYPERBENCH_CASES = [
       32,
       64
     ],
-    "reference": "numerical: qualification required",
+    "reference": "numerical: qualified fixed bank (WENO-Z5 / LLF, N=512, CFL=0.15)",
     "reference_tier": "numerical",
     "suite": "complex"
   },
@@ -3656,9 +3656,9 @@ window.HYPERBENCH_CASES = [
       32,
       64
     ],
-    "reference": "numerical: qualification required",
+    "reference": "numerical: qualified fixed bank (WENO-Z5 / LLF, N=512, CFL=0.15)",
     "reference_tier": "numerical",
     "suite": "complex"
   }
 ];
-window.HYPERBENCH_REVISION = "CODE / d3ad9d0b5 \u00b7 2026-09-22";
+window.HYPERBENCH_REVISION = "CODE / 6a883eea1 \u00b7 2026-09-22";
