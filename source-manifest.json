@@ -1,5 +1,5 @@
 {
-  "code_commit": "6a883eea1156348a3f389a925d579177bd1a8a37",
+  "code_commit": "bb469ea5a8f187f4068ac4953eae6f3176dd965e",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
@@ -19,20 +19,36 @@
       "sha256": "e8c36a9855d2a40c4b2f1f2ddfddf1ebe06eb51e7d8fa67e4f55f3799a3c9801"
     },
     {
+      "path": "hyperbench/complex_additional.py",
+      "sha256": "f3e588c913973a8aed9d88e2f74b9bc03fbcc9d0cef1addd51d4562f4989f183"
+    },
+    {
+      "path": "hyperbench/complex_similarity.py",
+      "sha256": "f4017c767f411ee684e44d178c94a87f8632287d2b78b4b91b2b688cbd43f547"
+    },
+    {
+      "path": "hyperbench/complex_detonation.py",
+      "sha256": "28a939a7f50264f48566b1ad5ca2039178fe8ef88e4edea869bd116faa61cb53"
+    },
+    {
+      "path": "hyperbench/complex_dry_riemann.py",
+      "sha256": "d78516d143b8a2f173e1a3d6d1d600518e61daa54fcd96f598d8b9fb3c1b469c"
+    },
+    {
       "path": "hyperbench/complex_suite.py",
-      "sha256": "5e21a3cf12c96aecbd1f9694e551bd36b919a458175921ceb406ccbdb0eb07fc"
+      "sha256": "edfc3ffc1483ea31faf9ab3e70a0401f5a64ce4746b58934a17d56638c88c7c7"
     },
     {
       "path": "hyperbench/reference_tiers.py",
-      "sha256": "28d2744d1e8258e4acacc63e68c854302b02a7c05c894daf576ddd87ac998450"
+      "sha256": "40009fe1f0b93e77893406aac6a0f30aaf638f72b89636cae2aeb9e9cafb6480"
     },
     {
       "path": "hyperbench/reference_data/admission.json",
-      "sha256": "edd99034c103ef6f841b3a4c26c9beee757347b60c63904549305a00b4258271"
+      "sha256": "734c0b01ac5b3665f25ec1b3aa45bba777e81a673fd6e3bd7107d1e44a29c3af"
     },
     {
       "path": "hyperbench/COMPLEX_EXTENSION.md",
-      "sha256": "779ca083a526d21fbcbdbfaf9099886fb5a9b0303d37e63b5554bda0842f6ce0"
+      "sha256": "9db60ec6426cf5a6a0c11885db91c7367ea0cafad25b1615a79a9d38f6f15b79"
     },
     {
       "path": "hyperbench/COST_MODEL.md",
@@ -40,7 +56,7 @@
     },
     {
       "path": "hyperbench/README.md",
-      "sha256": "4b2351fc932a1b6fff10705b4a9447c9d36c8a63d4d35413dd3655a29b9b86d7"
+      "sha256": "8a616d723099c70ef47b0b79c1623d7f0b81c0ed7f41bcbb4b7859aaab8d1fba"
     },
     {
       "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",

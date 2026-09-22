@@ -3659,6 +3659,628 @@ window.HYPERBENCH_CASES = [
     "reference": "numerical: qualified fixed bank (WENO-Z5 / LLF, N=512, CFL=0.15)",
     "reference_tier": "numerical",
     "suite": "complex"
+  },
+  {
+    "name": "advection_complex_absolute_multiscale",
+    "family": "advection",
+    "equation": "advection",
+    "initial": "absolute_multiscale",
+    "boundary": "periodic",
+    "bounds": [
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "mean": -0.3,
+      "absolute_modes": [
+        [
+          3,
+          1.0
+        ],
+        [
+          11,
+          -0.4
+        ]
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_translation",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "advection_complex_windowed_packets",
+    "family": "advection",
+    "equation": "advection",
+    "initial": "windowed_packets",
+    "boundary": "periodic",
+    "bounds": [
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "mean": 0.4,
+      "windows": [
+        [
+          0.08,
+          0.32,
+          3,
+          1.2
+        ],
+        [
+          0.57,
+          0.91,
+          5,
+          -1.0
+        ]
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_translation",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "burgers_complex_absolute_multiscale",
+    "family": "burgers",
+    "equation": "burgers",
+    "initial": "absolute_multiscale",
+    "boundary": "periodic",
+    "bounds": [
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "mean": -0.3,
+      "absolute_modes": [
+        [
+          3,
+          1.0
+        ],
+        [
+          11,
+          -0.4
+        ]
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_burgers",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "burgers_complex_windowed_packets",
+    "family": "burgers",
+    "equation": "burgers",
+    "initial": "windowed_packets",
+    "boundary": "periodic",
+    "bounds": [
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "mean": 0.4,
+      "windows": [
+        [
+          0.08,
+          0.32,
+          3,
+          1.2
+        ],
+        [
+          0.57,
+          0.91,
+          5,
+          -1.0
+        ]
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_burgers",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_riemann_colliding",
+    "family": "shallow",
+    "equation": "shallow",
+    "initial": "colliding",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "left": [
+        1.0,
+        2.0
+      ],
+      "right": [
+        0.7,
+        -1.5
+      ],
+      "grav": 1.0
+    },
+    "times": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_shallow_riemann",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_riemann_asymmetric_wet",
+    "family": "shallow",
+    "equation": "shallow",
+    "initial": "asymmetric_wet",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "left": [
+        2.0,
+        0.3
+      ],
+      "right": [
+        0.3,
+        -0.2
+      ],
+      "grav": 1.0
+    },
+    "times": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_shallow_riemann",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_riemann_separating_dry",
+    "family": "shallow",
+    "equation": "shallow",
+    "initial": "dry_dam",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "left": [
+        1.0,
+        -3.0
+      ],
+      "right": [
+        0.7,
+        3.0
+      ],
+      "grav": 1.0
+    },
+    "times": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_shallow_dry",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_riemann_left_dry",
+    "family": "shallow",
+    "equation": "shallow",
+    "initial": "dry_dam",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "left": [
+        0.0,
+        0.0
+      ],
+      "right": [
+        1.0,
+        -0.4
+      ],
+      "grav": 1.0
+    },
+    "times": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_shallow_dry",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_riemann_right_dry",
+    "family": "shallow",
+    "equation": "shallow",
+    "initial": "dry_dam",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "left": [
+        1.0,
+        0.5
+      ],
+      "right": [
+        0.0,
+        0.0
+      ],
+      "grav": 1.0
+    },
+    "times": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_shallow_dry",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "euler_vacuum_generated",
+    "family": "euler",
+    "equation": "euler",
+    "initial": "generated",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "allow_vacuum": true,
+      "gamma": 1.4,
+      "left": [
+        1.0,
+        -8.0,
+        1.0
+      ],
+      "right": [
+        0.5,
+        8.0,
+        0.7
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.2
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_euler_vacuum",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "euler_vacuum_right_empty",
+    "family": "euler",
+    "equation": "euler",
+    "initial": "right_empty",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -4.0,
+        4.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "allow_vacuum": true,
+      "gamma": 1.4,
+      "left": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "right": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "times": [
+      0.02,
+      0.1,
+      0.2
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_euler_vacuum",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "shallow_steady_transcritical",
+    "family": "shallow",
+    "equation": "shallow_bathy",
+    "initial": "transcritical",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "grav": 1.0,
+      "discharge": 0.3,
+      "head": 0.7722107119835747,
+      "bump_height": 0.1,
+      "bump_width": 0.3,
+      "branch": "transcritical",
+      "jump_location": 0.4
+    },
+    "times": [
+      0.1,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_steady_shallow",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "euler_noh_planar",
+    "family": "euler",
+    "equation": "euler",
+    "initial": "noh_planar",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "allow_vacuum": true,
+      "gamma": 1.6666666666666667,
+      "density": 1.0,
+      "inflow_speed": 1.0
+    },
+    "times": [
+      0.02,
+      0.6
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_noh",
+    "reference_tier": "analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "euler_sedov_planar",
+    "family": "euler",
+    "equation": "euler",
+    "initial": "sedov_planar",
+    "boundary": "extrap",
+    "bounds": [
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "allow_vacuum": true,
+      "gamma": 1.6666666666666667,
+      "density": 1.0,
+      "energy": 1.0,
+      "initial_age": 0.2
+    },
+    "times": [
+      0.02,
+      0.15
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_sedov",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "reactive_znd_overdriven_50",
+    "family": "reactive_euler",
+    "equation": "reactive",
+    "initial": "znd",
+    "boundary": "prescribed",
+    "bounds": [
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "gamma": 1.4,
+      "upstream_pressure": 0.1,
+      "upstream_density": 1.0,
+      "shock_speed": 5.0,
+      "shock_origin": -0.4,
+      "heat": 1.0,
+      "rate": 50.0,
+      "ignition_temperature": 0.5,
+      "prescribed_boundary": "znd"
+    },
+    "times": [
+      0.01,
+      0.03,
+      0.1
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_znd",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
+  },
+  {
+    "name": "reactive_znd_overdriven_500",
+    "family": "reactive_euler",
+    "equation": "reactive",
+    "initial": "znd",
+    "boundary": "prescribed",
+    "bounds": [
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "params": {
+      "complex": true,
+      "gamma": 1.4,
+      "upstream_pressure": 0.1,
+      "upstream_density": 1.0,
+      "shock_speed": 5.0,
+      "shock_origin": -0.4,
+      "heat": 1.0,
+      "rate": 500.0,
+      "ignition_temperature": 0.5,
+      "prescribed_boundary": "znd"
+    },
+    "times": [
+      0.01,
+      0.03,
+      0.1
+    ],
+    "grids": [
+      32,
+      64,
+      128
+    ],
+    "reference": "complex_znd",
+    "reference_tier": "semi_analytic",
+    "suite": "complex"
   }
 ];
-window.HYPERBENCH_REVISION = "CODE / 6a883eea1 \u00b7 2026-09-22";
+window.HYPERBENCH_REVISION = "CODE / bb469ea5a \u00b7 2026-09-22";
