@@ -1,45 +1,45 @@
 {
-  "code_commit": "bb469ea5a8f187f4068ac4953eae6f3176dd965e",
+  "code_commit": "cd755273992f9d39f818f48f9b0c9bf092aa9820",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
-      "path": "hyperbench/catalog.py",
-      "sha256": "1b03e768c62d2e64bbcf38a4e4fe06d508601c4c61b7c87c9a428e56acf74d71"
+      "path": "hyperbench/cases/catalog.py",
+      "sha256": "e0b27d293dd3e2a522923788ce516ede1d9978d82a88808ffad9f6f58f9b9229"
     },
     {
-      "path": "hyperbench/v2_catalog.py",
-      "sha256": "9c3c4b732e6e8a4ff389a78caafef03ad6941761e1ee7eeb86535fa740d10534"
+      "path": "hyperbench/cases/v2_catalog.py",
+      "sha256": "6dc9c646a5c72ee92f599f7b3133d5d44b0c00a178239d353f1ce8273278ec1c"
     },
     {
-      "path": "hyperbench/burgers_stress.py",
-      "sha256": "b155599a53de672e9f9405e342e8ebf2c88ecde9ba834c94e752a7eecd630db9"
+      "path": "hyperbench/cases/burgers_stress.py",
+      "sha256": "35aa182dac7cef158c8b5fd36d022b246b59c3e31afd42840aa69ba75be56559"
     },
     {
-      "path": "hyperbench/complex_catalog.py",
-      "sha256": "e8c36a9855d2a40c4b2f1f2ddfddf1ebe06eb51e7d8fa67e4f55f3799a3c9801"
+      "path": "hyperbench/cases/complex_catalog.py",
+      "sha256": "7a45e01adb0faf5eedb09fac954a77f82ab1ff45393bf6e42bb1901025e7c314"
     },
     {
-      "path": "hyperbench/complex_additional.py",
-      "sha256": "f3e588c913973a8aed9d88e2f74b9bc03fbcc9d0cef1addd51d4562f4989f183"
+      "path": "hyperbench/cases/complex_additional.py",
+      "sha256": "a77785bdff6c9fc36c722ceeff13605c82789bbbcbce5b7dce17db5444cabd2f"
     },
     {
-      "path": "hyperbench/complex_similarity.py",
+      "path": "hyperbench/references/complex_similarity.py",
       "sha256": "f4017c767f411ee684e44d178c94a87f8632287d2b78b4b91b2b688cbd43f547"
     },
     {
-      "path": "hyperbench/complex_detonation.py",
+      "path": "hyperbench/references/complex_detonation.py",
       "sha256": "28a939a7f50264f48566b1ad5ca2039178fe8ef88e4edea869bd116faa61cb53"
     },
     {
-      "path": "hyperbench/complex_dry_riemann.py",
+      "path": "hyperbench/references/complex_dry_riemann.py",
       "sha256": "d78516d143b8a2f173e1a3d6d1d600518e61daa54fcd96f598d8b9fb3c1b469c"
     },
     {
-      "path": "hyperbench/complex_suite.py",
-      "sha256": "edfc3ffc1483ea31faf9ab3e70a0401f5a64ce4746b58934a17d56638c88c7c7"
+      "path": "hyperbench/cases/complex_suite.py",
+      "sha256": "0964812b72b9781089d48fe795351a5449147a04ca2c3b96181b053c62ec8973"
     },
     {
-      "path": "hyperbench/reference_tiers.py",
+      "path": "hyperbench/references/reference_tiers.py",
       "sha256": "40009fe1f0b93e77893406aac6a0f30aaf638f72b89636cae2aeb9e9cafb6480"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "path": "hyperbench/README.md",
-      "sha256": "8a616d723099c70ef47b0b79c1623d7f0b81c0ed7f41bcbb4b7859aaab8d1fba"
+      "sha256": "00ebc6c34ac5f666b35c1acb66a1829ed5c81aa30e7013d5c3429132d5ffb2b1"
     },
     {
       "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",
