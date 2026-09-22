@@ -1,5 +1,5 @@
 {
-  "code_commit": "fad239e3ec1198ac2f487be2ccaa6a169247b1ee",
+  "code_commit": "d3ad9d0b57bd4817d613b1bf812d1670f0d8b5ae",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
@@ -12,7 +12,27 @@
     },
     {
       "path": "hyperbench/burgers_stress.py",
-      "sha256": "b7022e38c3e0d9323e90059cde35b2b3eccddef62c77d6f71e990721685d7eaf"
+      "sha256": "b155599a53de672e9f9405e342e8ebf2c88ecde9ba834c94e752a7eecd630db9"
+    },
+    {
+      "path": "hyperbench/complex_catalog.py",
+      "sha256": "e8c36a9855d2a40c4b2f1f2ddfddf1ebe06eb51e7d8fa67e4f55f3799a3c9801"
+    },
+    {
+      "path": "hyperbench/complex_suite.py",
+      "sha256": "5e21a3cf12c96aecbd1f9694e551bd36b919a458175921ceb406ccbdb0eb07fc"
+    },
+    {
+      "path": "hyperbench/reference_tiers.py",
+      "sha256": "28d2744d1e8258e4acacc63e68c854302b02a7c05c894daf576ddd87ac998450"
+    },
+    {
+      "path": "hyperbench/reference_data/admission.json",
+      "sha256": "edd99034c103ef6f841b3a4c26c9beee757347b60c63904549305a00b4258271"
+    },
+    {
+      "path": "hyperbench/COMPLEX_EXTENSION.md",
+      "sha256": "779ca083a526d21fbcbdbfaf9099886fb5a9b0303d37e63b5554bda0842f6ce0"
     },
     {
       "path": "hyperbench/COST_MODEL.md",
@@ -20,7 +40,7 @@
     },
     {
       "path": "hyperbench/README.md",
-      "sha256": "2288da7857c817807dfc5c4e7194f9d9dc4e9eb5b6702f86f563f3c3a6b5dda9"
+      "sha256": "4b2351fc932a1b6fff10705b4a9447c9d36c8a63d4d35413dd3655a29b9b86d7"
     },
     {
       "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",

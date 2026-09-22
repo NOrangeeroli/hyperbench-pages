@@ -20,6 +20,7 @@ function catalogue() {
         .map(
           (c) =>
             `<h4>${escapeHTML(c.name)}</h4><div class="table-wrap"><table><tbody>${[
+              ["Suite / Reference tier", c.suite + " / " + c.reference_tier],
               ["方程 / 初态", c.equation + " / " + c.initial],
               ["边界 / 区域", c.boundary + " / " + JSON.stringify(c.bounds)],
               ["参数", JSON.stringify(c.params)],
