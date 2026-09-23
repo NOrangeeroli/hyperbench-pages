@@ -1,5 +1,5 @@
 {
-  "code_commit": "3cab1a215f44b1625e531b2bcd5ac0334f050ef0",
+  "code_commit": "bb45812aa463bf26094c700abf652ca379c762ae",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
     {
@@ -8,11 +8,11 @@
     },
     {
       "path": "docs/hyperbench-site/content.js",
-      "sha256": "4c08d96c4983ed8f6d19bdf5e5cb38ed17b03b568c7707c5e77af53f86787b63"
+      "sha256": "60eb658c6ffafbef6becbac3dbe7ad441a2c83aea969c4e2f2702d9ac8ceb546"
     },
     {
       "path": "docs/hyperbench-site/style.css",
-      "sha256": "35f28437dc4d7b8d16c7bb0fc54c3affbcb86332370fabe9be22a88e71312535"
+      "sha256": "03e1d170cba79d449c2a287c2a9ca21b221a6038258422f40a581ba5035cfe55"
     },
     {
       "path": "hyperbench/cases/catalog.py",
@@ -64,7 +64,7 @@
     },
     {
       "path": "hyperbench/COST_MODEL.md",
-      "sha256": "2a9ba2cda4049257fe5296a2caacc01a17850e4a2e2129b3990cfae03929bc7a"
+      "sha256": "253a3d0256ea25f57b923bcabaa6f3ff1f63d3156357a5ffc34ea8e8fb45938a"
     },
     {
       "path": "hyperbench/README.md",

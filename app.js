@@ -40,10 +40,15 @@ function catalogue() {
 }
 const nav = document.querySelector("#chapters");
 nav.innerHTML = pages
-  .map((p) => `<a href="#${p.id}" data-page="${p.id}">${p.title}</a>`)
+  .map((p) => `<a href="#${p.id}" data-page="${p.id}"${p.parent ? ' class="subchapter"' : ""}>${p.title}</a>`)
   .join("");
 function render() {
-  const id = location.hash.slice(1) || "overview";
+  let id = location.hash.slice(1) || "overview";
+  // Preserve published links after merging the two model walkthrough pages.
+  if (id === "cost-machine" || id === "cost-example") {
+    id = "cost-walkthrough";
+    history.replaceState(null, "", "#" + id);
+  }
   if (id === "content") return;
   const p = pages.find((p) => p.id === id) || pages[0];
   const i = pages.indexOf(p);

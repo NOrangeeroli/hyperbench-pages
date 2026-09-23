@@ -4283,4 +4283,4 @@ window.HYPERBENCH_CASES = [
     "suite": "complex"
   }
 ];
-window.HYPERBENCH_REVISION = "CODE / 3cab1a215 \u00b7 2026-09-22";
+window.HYPERBENCH_REVISION = "CODE / bb45812aa \u00b7 2026-09-22";

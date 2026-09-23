@@ -249,7 +249,7 @@ coverage、所有 kernel 的序列化 DAG、model_spec、provenance、带大小/
 
 ## 可手算的完整例子：PC + LLF + Euler
 
-网站的[一步算例](https://norangeeroli.github.io/hyperbench-pages/#cost-example)
+网站的[模型结构与一步算例](https://norangeeroli.github.io/hyperbench-pages/#cost-walkthrough)
 逐步展示下列过程。教学配置为 `fv_llf_pc_rk1`，N=4、接受1步、拒绝0次、1张输出快照。
 这只是计算模型算术演示，不是新 PDE 实验；正式 Benchmark 要求 N≥8，analyze 允许 N≥2。
 
@@ -327,7 +327,7 @@ for profile in ("unit", "division8"):
 
 ## 计算、存储与通信结构图
 
-网站的[结构图章节](https://norangeeroli.github.io/hyperbench-pages/#cost-machine)
+网站的[模型结构与一步算例章节](https://norangeeroli.github.io/hyperbench-pages/#cost-walkthrough)
 展示外部输入/快照、抽象传输通道、快存工作区和计算单元的关系。
 图源为 `docs/hyperbench-site/assets/cost-machine.svg`。
 
