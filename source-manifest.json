@@ -1,7 +1,19 @@
 {
-  "code_commit": "9eb7cc373f6065c34ae85882e95c9aa8d526d272",
+  "code_commit": "3cab1a215f44b1625e531b2bcd5ac0334f050ef0",
   "scope": "Documentation snapshot; no solver execution",
   "sources": [
+    {
+      "path": "docs/hyperbench-site/assets/cost-machine.svg",
+      "sha256": "06460506643159fc3f20cf17697110821e06a70618877c5d26c3902faa6e7190"
+    },
+    {
+      "path": "docs/hyperbench-site/content.js",
+      "sha256": "4c08d96c4983ed8f6d19bdf5e5cb38ed17b03b568c7707c5e77af53f86787b63"
+    },
+    {
+      "path": "docs/hyperbench-site/style.css",
+      "sha256": "35f28437dc4d7b8d16c7bb0fc54c3affbcb86332370fabe9be22a88e71312535"
+    },
     {
       "path": "hyperbench/cases/catalog.py",
       "sha256": "9d674ff85e4f0e75daf06f9444449c956e5d5baaed90cac3bebf04b2c3062d5a"
@@ -12,7 +24,7 @@
     },
     {
       "path": "hyperbench/cases/burgers_stress.py",
-      "sha256": "406f7ed2f9cf301dd2350a60cf67cd833f0f2a79c8944ad46810e093d4e1a727"
+      "sha256": "eb5c48622538df74c5ba95f319ec2b2902161e5cf1eadb7285f6b173ed3087d3"
     },
     {
       "path": "hyperbench/cases/complex_catalog.py",
@@ -52,11 +64,11 @@
     },
     {
       "path": "hyperbench/COST_MODEL.md",
-      "sha256": "0469454c9e533b38747c7428036a518edca7a71d99964cec5a8a6911098381fc"
+      "sha256": "2a9ba2cda4049257fe5296a2caacc01a17850e4a2e2129b3990cfae03929bc7a"
     },
     {
       "path": "hyperbench/README.md",
-      "sha256": "b6582e962d768f17e5277641702692b39f38b5cf717a0dae2c64fa136a178228"
+      "sha256": "95d560c4842307c2805baeab0a4675ef68b13c47e1b6c0384e0f0ab85d49e019"
     },
     {
       "path": "experiments/hyperbolic/20260922_burgers_cost_lines_v031/burgers_all_cost.png",

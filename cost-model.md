@@ -324,3 +324,23 @@ for profile in ("unit", "division8"):
 
 新增 MP5、TENO、RKDG、Yee 等方法尚无已验证映射；历史52个支持项不能解释成当前全部solver。
 文档数字可在仓库根目录运行 `python docs/check_cost_example.py` 复核；不执行PDE或重新测量。
+
+## 计算、存储与通信结构图
+
+网站的[结构图章节](https://norangeeroli.github.io/hyperbench-pages/#cost-machine)
+展示外部输入/快照、抽象传输通道、快存工作区和计算单元的关系。
+图源为 `docs/hyperbench-site/assets/cost-machine.svg`。
+
+- 计算单元生成 W 与 D；工作区大小只负责与容量 M 比较，不直接加进 ticks。
+- 快存与计算单元间访问计入 logical_bytes；全驻留时这些内部访问不逐次计为外部流量。没有单独的快存访问带宽/延迟项。
+- Q/B 只有抽象传输容量约束，没有固定通信延迟、PCIe、MPI、网络、实际磁盘或数据库 I/O。
+- kernel/stage 屏障贡献串行依赖约束，不额外收取硬件屏障启动费用。
+- 工作区超出 M 后直接切换为 logical_bytes；不模拟部分驻留或分块。
+
+上述 N=4 的一步算例在 M=0、B=8 bytes/tick 时，Q=488 B，
+评分变为 max(93/8,21,488/8)=61 ticks，由传输项主导。
+这是模型参数的教学对照，不是新增 PDE 实验或硬件测量。
+原先默认 M=32768、B=64 时，Q=64 B，评分为21 ticks。
+
+模型外的数据库 `run.costs_json` 保存版本化成本、资源配置、源码哈希和
+不可用原因；数据库 I/O 不属于模型的 Q。

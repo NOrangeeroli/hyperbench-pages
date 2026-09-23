@@ -484,3 +484,7 @@ footer {
     padding: 18px 12px;
   }
 }
+
+/* Keep the labeled architecture readable on narrow screens; SVG also opens alone. */
+.machine-figure { overflow-x: auto; }
+.machine-figure img { display: block; width: 100%; min-width: 660px; height: auto; }
